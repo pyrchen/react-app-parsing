@@ -1,0 +1,4 @@
+name: GitHub PL
+on: [push]
+jobs:
+  linting:
