@@ -1,5 +1,6 @@
 const config = {
   extends: [
+    'airbnb',
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:import/errors',
