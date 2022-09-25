@@ -6,10 +6,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "lint:js": "eslint \"./**/*.{js,jsx}\"",
+    "lint:js": "eslint ./**/*.js",
     "lint:js:fix": "eslint \"./**/*.{js,jsx}\" --fix",
-    "lint:scss": "stylelint \"./**/*.${css,scss}\"",
-    "lint:scss:fix": "stylelint \"./**/*.${css,scss}\" --fix",
+    "lint:scss": "stylelint \"src/**/*.scss\"",
+    "lint:scss:fix": "stylelint \"src/**/*.scss\" --fix",
     "test:lint:unit": "",
     "eject": "react-scripts eject"
   },
@@ -45,7 +45,11 @@
     "eslint-plugin-testing-library": "^5.7.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "sass": "^1.55.0",
+    "stylelint": "^14.12.1",
+    "stylelint-config-property-sort-order-smacss": "^9.0.0",
+    "stylelint-config-recommended-scss": "^7.0.0",
+    "stylelint-config-standard": "^28.0.0"
   }
 }

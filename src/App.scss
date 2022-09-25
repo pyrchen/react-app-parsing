@@ -14,24 +14,30 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+  background-color: #282c34;
   color: white;
+  font-size: calc(10px + 2vmin);
 }
 
 .App-link {
+  display: flex;
+  position: fixed;
+  height: 10px;
+  background-color: black;
   color: #61dafb;
+  font-family: "Helvetica Neue", serif;
 }
 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

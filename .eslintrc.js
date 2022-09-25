@@ -1,4 +1,5 @@
 const config = {
+  root: true,
   env: {
     browser: true,
     commonjs: true,
@@ -25,7 +26,6 @@ const config = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  root: true,
   rules: {
     indent: ['error', 2],
     quotes: ['error', 'single'],
