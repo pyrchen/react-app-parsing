@@ -31,7 +31,8 @@ jobs:
         id: changed_files
         uses: trilom/file-changes-action@v1.2.4
         with:
-          output: json
+          output: 'json'
+          fileOutput: 'csv'
       - run: |
           echo Added files: ${{ steps.changed_files.outputs.files_added }}
           echo Changed files: ${{ steps.changed_files.outputs.files_modified }}
