@@ -4,7 +4,7 @@ jobs:
   Linting:
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [ubuntu-latest]
         node: [16.x]
     runs-on: ${{ matrix.os }}
     steps:
@@ -14,25 +14,26 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
-      - name: Bootstraping packages
+      - name: Using cache num.1
         id: npm-cache-dir
         run: |
           echo "::set-output name=dir::$(npm config get cache)"
-      - uses: actions/cache@v3.0.8
+      - name: Using cache num.2
+        uses: actions/cache@v3.0.8
         id: npm-cache
         with:
           path: ${{ steps.npm-cache-dir.outputs.dir }}
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - if: ${{ steps.npm-cache.outputs.cache-hit != 'true' }}
+      - name: Bootstraping packages
+        if: ${{ steps.npm-cache.outputs.cache-hit != 'true' }}
         run: npm install
       - name: Get files changes
         id: changed_files
         uses: trilom/file-changes-action@v1.2.4
-        with:
-          output: ${{ homedir() }}
-      - run: |
+      - name: Logging changed files
+        run: |
           echo Added files: ${{ steps.changed_files.outputs.files_added }}
           echo Changed files: ${{ steps.changed_files.outputs.files_modified }}
           echo Removed files: ${{ steps.changed_files.outputs.files_removes }}
