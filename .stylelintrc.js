@@ -2,7 +2,7 @@ const config = {
   extends: [
     'stylelint-config-standard',
     'stylelint-config-recommended-scss',
-    'stylelint-config-property-sort-order-smacss'
+    'stylelint-config-property-sort-order-smacss',
   ],
   rules: {
     indentation: 2,

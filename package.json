@@ -6,10 +6,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "lint:js": ".\\node_modules\\.bin\\eslint --cache ./**/*.{js,jsx,json}",
+    "lint:js": "eslint --quiet .eslintrc.js",
     "lint:js:fix": "eslint \"./**/*.{js,jsx}\" --fix",
-    "lint:scss": ".\\node_modules\\.bin\\stylelint --cache ./**/*.{css,scss}",
-    "lint:scss:fix": "stylelint \"src/**/*.scss\" --fix",
+    "lint:scss": "stylelint **/*.scss --config .stylelintrc",
+    "lint:scss:fix": "stylelint **/*.scss --config .stylelintrc",
     "test:lint:unit": "",
     "eject": "react-scripts eject"
   },
