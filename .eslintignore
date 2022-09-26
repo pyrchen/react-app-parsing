@@ -1,5 +1,18 @@
-node_modules
-
+# IDEs
 .idea
 .vscode
-.github
+
+# Outputs
+/dist
+/temp
+/build
+
+# Packages
+node_modules/
+
+# Optional cache
+.npm
+.eslintcache
+
+# Dotenv
+.env
