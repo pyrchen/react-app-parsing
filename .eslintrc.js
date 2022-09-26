@@ -44,6 +44,7 @@ const config = {
     'react/jsx-filename-extension': [1, {
       extensions: ['.js', '.jsx'],
     }],
+    'react/jsx-one-expression-per-line': 'off',
     'import/no-extraneous-dependencies': 'off',
   },
   settings: {

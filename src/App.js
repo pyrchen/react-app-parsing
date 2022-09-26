@@ -1,8 +1,10 @@
-import './App.scss';
+import './App.scss'
 
 function App() {
+  const p = 'hello'
+  let b;
   return (
-    <div>App is working</div>
+    <div>App is working { p }</div>
   );
 }
 
