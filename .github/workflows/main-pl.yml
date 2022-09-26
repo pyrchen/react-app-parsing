@@ -39,7 +39,7 @@ jobs:
           echo Removed files: ${{ steps.changed_files.outputs.files_removes }}
       - name: ESLint
         if: ${{ always() && (steps.changed_files.outputs.files_added || steps.changed_files.outputs.files_modified) }}
-        run: .\\node_modules\\.bin\\eslint --config ./.eslintrc.js --ignore-path ./.eslintignore ${{ steps.get_file_changes.outputs.files_added }} ${{ steps.get_file_changes.outputs.files_modified }}
+        run: npm run lint:js --config ./.eslintrc.js --ignore-path ./.eslintignore ${{ steps.get_file_changes.outputs.files_added }} ${{ steps.get_file_changes.outputs.files_modified }}
       - name: Stylelint
         if: ${{ always() && (steps.changed_files.outputs.files_added || steps.changed_files.outputs.files_modified) }}
-        run: .\\node_modules\\.bin\\stylelint --config ./.stylelintrc.js  --ignore-path ./.stylelintignore --allow-empty-input ${{ steps.get_file_changes.outputs.files_added }} ${{ steps.get_file_changes.outputs.files_modified }}
+        run: npm run lint:scss --config ./.stylelintrc.js  --ignore-path ./.stylelintignore --allow-empty-input ${{ steps.get_file_changes.outputs.files_added }} ${{ steps.get_file_changes.outputs.files_modified }}
