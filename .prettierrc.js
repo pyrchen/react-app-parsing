@@ -4,7 +4,8 @@ const config = {
   printWidth: 120,
   tabWidth: 2,
   arrowParens: 'always',
-  trailingComma: 'all',
+  trailingComma: 'error',
+  bracketSameLine: false,
   jsxBracketSameLine: false,
   bracketSpacing: true,
 };
