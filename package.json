@@ -6,12 +6,31 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "lint:js": "eslint --quiet .eslintrc.js",
-    "lint:js:fix": "eslint \"./**/*.{js,jsx}\" --fix",
-    "lint:scss": "stylelint **/*.scss --config .stylelintrc",
-    "lint:scss:fix": "stylelint **/*.scss --config .stylelintrc",
+    "lint:js": "eslint --config .eslintrc.js --cache --ext .js --ext .jsx ./",
+    "lint:js:fix": "npm run lint:js --fix",
+    "lint:scss": "stylelint \"./src/**/*.{css,scss}\"",
+    "lint:scss:fix": "stylelint \"./src/**/*.{css,scss}\" --fix",
     "test:lint:unit": "",
     "eject": "react-scripts eject"
+  },
+  "lint-staged": {
+    "*.(js|jsx|json)": [
+      "npm run lint:js:fix",
+      "git add"
+    ],
+    "*.(scss|css)": [
+      "npm run lint:scss:fix",
+      "git add"
+    ],
+    "*.module.(scss|css)": [
+      "npm run lint:scss:fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "browserslist": {
     "production": [
@@ -37,14 +56,17 @@
     "@testing-library/user-event": "^14.4.3",
     "babel-eslint": "^10.1.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jest": "^27.0.4",
     "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.8",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-testing-library": "^5.7.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
     "react-scripts": "^5.0.1",
     "sass": "^1.55.0",
     "stylelint": "^14.12.1",

@@ -7,17 +7,8 @@ const config = {
     jest: true,
     node: true,
   },
-  extends: [
-    'airbnb',
-    'eslint:recommended',
-    'plugin:import/errors',
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    'plugin:jest/recommended',
-    'plugin:testing-library/react',
-    'plugin:jsx-a11y/recommended',
-  ],
-  plugins: ['react', 'import', 'jsx-a11y'],
+  extends: ['airbnb', 'eslint:recommended', 'plugin:testing-library/react', 'prettier'],
+  plugins: ['react', 'import', 'jsx-a11y', 'jest', 'react-hooks', 'prettier'],
   parserOptions: {
     ecmaFeatures: {
       experimentalObjectRestSpread: true,
@@ -27,23 +18,30 @@ const config = {
     sourceType: 'module',
   },
   rules: {
+    'prettier/prettier': ['error'],
     indent: ['error', 2],
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
-    'comma-dangle': ['error', {
-      arrays: 'always-multiline',
-      objects: 'always-multiline',
-      imports: 'always-multiline',
-      exports: 'always-multiline',
-      functions: 'never',
-    }],
+    'comma-dangle': [
+      'error',
+      {
+        arrays: 'always-multiline',
+        objects: 'always-multiline',
+        imports: 'always-multiline',
+        exports: 'always-multiline',
+        functions: 'never',
+      },
+    ],
     'linebreak-style': ['error', 'unix'],
     'no-console': 'warn',
     'no-duplicate-imports': 'warn',
     'react/react-in-jsx-scope': 'off',
-    'react/jsx-filename-extension': [1, {
-      extensions: ['.js', '.jsx'],
-    }],
+    'react/jsx-filename-extension': [
+      1,
+      {
+        extensions: ['.js', '.jsx'],
+      },
+    ],
     'react/jsx-one-expression-per-line': 'off',
     'import/no-extraneous-dependencies': 'off',
   },
