@@ -6,6 +6,7 @@ const config = {
   ],
   rules: {
     indentation: 2,
+
   },
   ignoreFiles: 'node_modules/**/*.css',
 };

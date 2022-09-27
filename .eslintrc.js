@@ -22,16 +22,7 @@ const config = {
     indent: ['error', 2],
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
-    'comma-dangle': [
-      'error',
-      {
-        arrays: 'always-multiline',
-        objects: 'always-multiline',
-        imports: 'always-multiline',
-        exports: 'always-multiline',
-        functions: 'never',
-      },
-    ],
+    'comma-dangle': ['error', 'always-multiline'],
     'linebreak-style': ['error', 'unix'],
     'no-console': 'warn',
     'no-duplicate-imports': 'warn',
