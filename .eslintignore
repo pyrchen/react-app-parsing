@@ -1,0 +1,19 @@
+# IDEs
+.idea
+.vscode
+
+# Outputs
+/dist
+/temp
+/build
+
+# Packages
+node_modules/
+
+# Optional cache
+.npm
+.eslintcache
+.stylelintcache
+
+# Dotenv
+.env

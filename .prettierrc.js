@@ -5,6 +5,9 @@ const config = {
   tabWidth: 2,
   arrowParens: 'always',
   trailingComma: 'all',
+  bracketSameLine: false,
+  jsxBracketSameLine: false,
+  bracketSpacing: true,
 };
 
 module.exports = config;
